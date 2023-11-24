@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iqro/config/config.dart';
 import 'package:iqro/features/auth/presentation/pages/intro/intro_page.dart';
+import 'package:iqro/features/auth/presentation/pages/compass_page/compass_page.dart';
 import 'package:iqro/service_locator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: themeData,
       debugShowCheckedModeBanner: false,
-      home: IntroPage(),
+      home: CompassScreen(),
     );
   }
 }
