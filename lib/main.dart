@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: themeData,
       debugShowCheckedModeBanner: false,
-      home: CompassScreen(),
+      home: const CompassScreen(),
     );
   }
 }

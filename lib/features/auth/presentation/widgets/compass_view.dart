@@ -23,7 +23,7 @@ class CompassViewPainter extends CustomPainter {
   late final minorScalePaint = Paint()
     ..style = PaintingStyle.stroke
     ..color = color.withOpacity(0.7)
-    ..strokeWidth = 1.0;
+    ..strokeWidth = 2.0;
 
   late final majorScaleStyle = const TextStyle(
       color: Colors.blue, fontSize: 20, fontWeight: FontWeight.bold);
@@ -81,6 +81,10 @@ class CompassViewPainter extends CustomPainter {
       );
 
       final offset = center + layoutOffset;
+
+      canvas.restore();
+      canvas.save();
+
       canvas.translate(offset.dx, offset.dy);
       canvas.rotate(angle.toRadians());
       canvas.translate(-offset.dx, -offset.dy);
@@ -88,7 +92,7 @@ class CompassViewPainter extends CustomPainter {
       textPainter.paint(canvas, offset);
     }
 
-    canvas.restore();
+    // canvas.restore();
   }
 
   @override
@@ -126,5 +130,5 @@ extension on TextSpan {
 }
 
 extension on num {
-  double toRadians() => this * pi / 100;
+  double toRadians() => this * pi / 50;
 }
