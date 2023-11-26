@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iqro/config/theme/app.colors.dart';
 import 'package:iqro/config/theme/app_texts.dart';
+import 'package:iqro/features/auth/presentation/pages/compass_page/compass_page.dart';
 import 'package:iqro/features/auth/presentation/pages/sign_in/sign_in_page.dart';
 import 'package:iqro/features/auth/presentation/widgets/choose_register.dart';
 import 'package:iqro/features/auth/presentation/widgets/elevated_button_widget.dart';
@@ -217,7 +218,12 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                       ContainerChoose(
                         image: 'assets/auth/Google.svg',
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => CompassScreen()));
+                        },
                       ),
                       ContainerChoose(
                         onTap: () {
