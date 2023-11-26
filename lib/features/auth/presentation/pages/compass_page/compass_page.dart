@@ -32,7 +32,7 @@ class _CompassScreenState extends State<CompassScreen> {
         backgroundColor: const Color(0xff236681),
         title: const Text("Компас",
             style: TextStyle(
-                fontSize: 17,
+                fontSize: 22,
                 fontWeight: FontWeight.w600,
                 color: Colors.white)),
         centerTitle: true,
@@ -57,7 +57,7 @@ class _CompassScreenState extends State<CompassScreen> {
             alignment: Alignment.center,
             children: [
               Neumorphism(
-                margin: EdgeInsets.all(size.width * 0.1),
+                margin: EdgeInsets.all(size.width * 0.09),
                 padding: const EdgeInsets.all(10),
                 child: Transform.rotate(
                   angle: (direction! * (pi / 180) * -1),
@@ -129,27 +129,22 @@ class CenterDisplayMeter extends StatelessWidget {
       distance: 2.5,
       blur: 5,
       child: Neumorphism(
-        margin: EdgeInsets.all(size.width * 0.06),
+        margin: EdgeInsets.all(size.width * 0.05),
         distance: 0,
         blur: 0,
         innerShadow: true,
         isReverse: true,
         child: Neumorphism(
-          margin: EdgeInsets.all(size.width * 0.05),
+          margin: EdgeInsets.all(size.width * 0.02),
           distance: 4,
-          blur: 5,
+          blur: 4,
           child: ContainerGradient(
-            padding: EdgeInsets.all(size.width * 0.02),
+            padding: EdgeInsets.all(size.width * 0.01),
             child: Container(
               alignment: Alignment.center,
               decoration: const BoxDecoration(
-                color: Colors.green,
+                color: Colors.black54,
                 shape: BoxShape.circle,
-                gradient: LinearGradient(
-                  begin: Alignment(-5, -5),
-                  end: Alignment.centerLeft,
-                  colors: [Colors.green, Colors.grey],
-                ),
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -157,15 +152,15 @@ class CenterDisplayMeter extends StatelessWidget {
                   Text(
                     "${direction.toInt().toString().padLeft(3, '0')}°",
                     style: TextStyle(
-                        color: Colors.greenAccent,
-                        fontSize: size.width * 0.05,
+                        color: Colors.white,
+                        fontSize: size.width * 0.07,
                         fontWeight: FontWeight.bold),
                   ),
                   Text(
                     getDirection(direction),
                     style: TextStyle(
-                        color: Colors.greenAccent,
-                        fontSize: size.width * 0.05,
+                        color: Colors.white,
+                        fontSize: size.width * 0.07,
                         fontWeight: FontWeight.bold),
                   ),
                 ],

@@ -26,7 +26,7 @@ class CompassViewPainter extends CustomPainter {
     ..strokeWidth = 2.0;
 
   late final majorScaleStyle = const TextStyle(
-      color: Colors.grey, fontSize: 15, fontWeight: FontWeight.bold);
+      color: Colors.white24, fontSize: 15, fontWeight: FontWeight.w400);
   late final _majorTicks = _layoutScale(majorTickerCount);
   late final _minorTicks = _layoutScale(minorTickerCount);
   late final _angleDegree = _layoutAngleScale(_majorTicks);
@@ -42,7 +42,7 @@ class CompassViewPainter extends CustomPainter {
     final center = size.center(origin);
     final radius = size.width / 2;
 
-    final majorTickLenght = size.width * 0.08;
+    final majorTickLenght = size.width * 0.09;
     final minorTickLenght = size.width * 0.055;
 
     canvas.save();
@@ -67,7 +67,6 @@ class CompassViewPainter extends CustomPainter {
 
     //paint angle degree
     for (final angle in _angleDegree) {
-      // var majorTickLength;
       final textPadding = majorTickLenght - size.width * 0.02;
       final textPainter = TextSpan(
         text: angle.toStringAsFixed(0),

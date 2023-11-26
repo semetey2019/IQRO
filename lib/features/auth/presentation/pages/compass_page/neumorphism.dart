@@ -35,7 +35,7 @@ class Neumorphism extends StatelessWidget {
                     offset: Offset(-distance, -distance),
                   ),
                   BoxShadow(
-                    color: Color(0xff236681),
+                    color: Color(0xff47515c),
                     blurRadius: blur,
                     offset: Offset(distance, distance),
                   ),
@@ -75,7 +75,7 @@ class ContainerGradient extends StatelessWidget {
       padding: padding,
       decoration: const BoxDecoration(
         shape: BoxShape.circle,
-        color: Colors.black26,
+        color: Colors.black38,
       ),
       child: child,
     );
