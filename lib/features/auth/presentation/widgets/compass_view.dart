@@ -26,14 +26,14 @@ class CompassViewPainter extends CustomPainter {
     ..strokeWidth = 2.0;
 
   late final majorScaleStyle = const TextStyle(
-      color: Colors.blue, fontSize: 20, fontWeight: FontWeight.bold);
+      color: Colors.grey, fontSize: 15, fontWeight: FontWeight.bold);
   late final _majorTicks = _layoutScale(majorTickerCount);
   late final _minorTicks = _layoutScale(minorTickerCount);
   late final _angleDegree = _layoutAngleScale(_majorTicks);
 
   late final cardinalityStyle = TextStyle(
     color: color,
-    fontSize: 12,
+    fontSize: 24,
   );
 
   @override
@@ -42,8 +42,8 @@ class CompassViewPainter extends CustomPainter {
     final center = size.center(origin);
     final radius = size.width / 2;
 
-    final majorTickerLenght = size.width * 0.08;
-    final minorTickerLenght = size.width * 0.055;
+    final majorTickLenght = size.width * 0.08;
+    final minorTickLenght = size.width * 0.055;
 
     canvas.save();
 
@@ -52,7 +52,7 @@ class CompassViewPainter extends CustomPainter {
       final tickStart =
           Offset.fromDirection(_correctAngle(angle).toRadians(), radius);
       final tickEnd = Offset.fromDirection(
-          _correctAngle(angle).toRadians(), radius - majorTickerLenght);
+          _correctAngle(angle).toRadians(), radius - majorTickLenght);
       canvas.drawLine(center + tickStart, center + tickEnd, majorScalePaint);
     }
 
@@ -61,26 +61,26 @@ class CompassViewPainter extends CustomPainter {
       final tickStart =
           Offset.fromDirection(_correctAngle(angle).toRadians(), radius);
       final tickEnd = Offset.fromDirection(
-          _correctAngle(angle).toRadians(), radius - minorTickerLenght);
+          _correctAngle(angle).toRadians(), radius - minorTickLenght);
       canvas.drawLine(center + tickStart, center + tickEnd, minorScalePaint);
     }
 
     //paint angle degree
     for (final angle in _angleDegree) {
-      var majorTickLength;
-      final textPadding = majorTickLength - size.width * 0.02;
+      // var majorTickLength;
+      final textPadding = majorTickLenght - size.width * 0.02;
       final textPainter = TextSpan(
         text: angle.toStringAsFixed(0),
         style: majorScaleStyle,
       ).toPainter()
         ..layout();
 
-      final layoutOffset = Offset.fromDirection(
+      final layoutOffest = Offset.fromDirection(
         _correctAngle(angle).toRadians(),
         radius - textPadding,
       );
 
-      final offset = center + layoutOffset;
+      final offset = center + layoutOffest;
 
       canvas.restore();
       canvas.save();
@@ -89,10 +89,40 @@ class CompassViewPainter extends CustomPainter {
       canvas.rotate(angle.toRadians());
       canvas.translate(-offset.dx, -offset.dy);
 
-      textPainter.paint(canvas, offset);
+      textPainter.paint(
+          canvas, Offset(offset.dx - (textPainter.width / 2), offset.dy));
+    }
+    // paint cardinality text
+    for (final cardinality in cardinalityMap.entries) {
+      final textPadding = majorTickLenght + size.width * 0.01;
+      final angle = cardinality.key.toDouble();
+      final text = cardinality.value;
+      final textPainter = TextSpan(
+        text: text,
+        style:
+            cardinalityStyle.copyWith(color: text == "N" ? Colors.red : null),
+      ).toPainter()
+        ..layout();
+
+      final layoutOffest = Offset.fromDirection(
+        _correctAngle(angle).toRadians(),
+        radius - textPadding,
+      );
+
+      final offset = center + layoutOffest;
+
+      canvas.restore();
+      canvas.save();
+
+      canvas.translate(offset.dx, offset.dy);
+      canvas.rotate(angle.toRadians());
+      canvas.translate(-offset.dx, -offset.dy);
+
+      textPainter.paint(
+          canvas, Offset(offset.dx - (textPainter.width / 2), offset.dy));
     }
 
-    // canvas.restore();
+    canvas.restore();
   }
 
   @override
@@ -107,7 +137,7 @@ class CompassViewPainter extends CustomPainter {
 
   List<double> _layoutAngleScale(List<double> ticks) {
     List<double> angle = [];
-    for (var i = 0; i < ticks.length; i) {
+    for (var i = 0; i < ticks.length; i++) {
       if (i == ticks.length - 1) {
         double degreeVal = (ticks[i] + 360) / 2;
         angle.add(degreeVal);
@@ -130,5 +160,5 @@ extension on TextSpan {
 }
 
 extension on num {
-  double toRadians() => this * pi / 50;
+  double toRadians() => this * pi / 180;
 }
