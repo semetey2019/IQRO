@@ -72,7 +72,7 @@ class _CompassScreenState extends State<CompassScreen> {
               ),
               //кызыл стрелка
               Positioned.fill(
-                top: size.height * .22,
+                top: size.height * .21,
                 child: Column(
                   children: [
                     Container(

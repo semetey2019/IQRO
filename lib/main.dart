@@ -5,6 +5,8 @@ import 'package:iqro/features/auth/presentation/pages/compass_page/compass_page.
 import 'package:iqro/service_locator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'features/auth/presentation/pages/tasbix_page.dart';
+
 bool show = true;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: themeData,
       debugShowCheckedModeBanner: false,
-      home: const CompassScreen(),
+      home: TasbixScreen(),
     );
   }
 }

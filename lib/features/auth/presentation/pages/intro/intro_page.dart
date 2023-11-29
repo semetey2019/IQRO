@@ -3,6 +3,8 @@ import 'package:iqro/config/theme/app.colors.dart';
 import 'package:iqro/config/theme/app_texts.dart';
 import 'package:iqro/features/auth/presentation/pages/register/register_page.dart';
 
+import '../pages.dart';
+
 class IntroPage extends StatefulWidget {
   @override
   _IntroPageState createState() => _IntroPageState();
@@ -92,8 +94,8 @@ class _IntroPageState extends State<IntroPage> {
                       // Переход к следующей странице с картинкой
                       currentPageIndex = (currentPageIndex + 1) % images.length;
                     });
-                    // Navigator.push(
-                    //     context, MaterialPageRoute(builder: (_) => SignInPage()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => SignInPage()));
                   },
                   child: Text(
                     AppTextAuth.next,
