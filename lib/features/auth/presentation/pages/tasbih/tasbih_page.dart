@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:iqro/config/theme/app.colors.dart';
-import 'package:iqro/features/auth/presentation/pages/compass/neumorphism.dart';
 import 'package:iqro/features/auth/presentation/pages/tasbih/neumorphism_tasbih.dart';
 import 'package:iqro/features/auth/presentation/widgets/tasbih/tasbih_view.dart';
 
@@ -38,11 +37,17 @@ class _TasbixScreenState extends State<TasbixScreen> {
             style:
                 theme.textTheme.titleLarge?.copyWith(color: AppColors.white)),
         centerTitle: true,
+        actions: [
+          IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.refresh),
+              color: Colors.white)
+        ],
       ),
       body: Stack(
         alignment: Alignment.center,
         children: [
-          NeumorphismTasbix(
+          NeumorphismTasbih(
             margin: EdgeInsets.all(size.width * 0.09),
             padding: const EdgeInsets.all(10),
             child: CustomPaint(
@@ -83,11 +88,11 @@ class _CenterCircleState extends State<CenterCircle> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     var theme = Theme.of(context);
-    return Neumorphism(
+    return NeumorphismTasbih(
       margin: EdgeInsets.all(size.width * 0.27),
       distance: 2.5,
       blur: 2,
-      child: Neumorphism(
+      child: NeumorphismTasbih(
         margin: EdgeInsets.all(size.width * 0.04),
         distance: 2,
         blur: 2,
@@ -102,7 +107,7 @@ class _CenterCircleState extends State<CenterCircle> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("${widget.direction.toString().padLeft(5, '0')}",
+                Text(widget.direction,
                     style: theme.textTheme.titleLarge
                         ?.copyWith(color: AppColors.white)),
               ],

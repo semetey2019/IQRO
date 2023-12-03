@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:iqro/config/theme/app.colors.dart';
 
-class NeumorphismTasbix extends StatelessWidget {
-  const NeumorphismTasbix({
+class NeumorphismTasbih extends StatelessWidget {
+  const NeumorphismTasbih({
     super.key,
     required this.child,
     this.distance = 8,
