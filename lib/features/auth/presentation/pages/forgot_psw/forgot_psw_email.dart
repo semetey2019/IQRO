@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:iqro/config/theme/app.colors.dart';
 import 'package:iqro/config/theme/app_texts.dart';
 import 'package:iqro/features/auth/presentation/pages/forgot_psw/check_email.dart';
-import 'package:iqro/features/auth/presentation/widgets/elevated_button_widget.dart';
-import 'package:iqro/features/auth/presentation/widgets/textformfield_widget.dart';
+import 'package:iqro/features/auth/presentation/widgets/register/elevated_button_widget.dart';
+import 'package:iqro/features/auth/presentation/widgets/register/textformfield_widget.dart';
 
 import '../../../../../config/helpers/validators.dart';
 

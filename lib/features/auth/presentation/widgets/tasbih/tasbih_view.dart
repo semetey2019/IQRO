@@ -9,7 +9,7 @@ class TasbixViewPainter extends CustomPainter {
 
   TasbixViewPainter({
     required this.color,
-    this.majorTickerCount = 12,
+    this.majorTickerCount = 16,
     this.minorTickerCount = 8,
   });
 
@@ -39,8 +39,8 @@ class TasbixViewPainter extends CustomPainter {
     final center = size.center(origin);
     final radius = size.width / 2;
 
-    final majorTickLenght = size.width * 0.09;
-    final minorTickLenght = size.width * 0.09;
+    final majorTickLenght = size.width * 0.08;
+    final minorTickLenght = size.width * 0.08;
 
     canvas.save();
 

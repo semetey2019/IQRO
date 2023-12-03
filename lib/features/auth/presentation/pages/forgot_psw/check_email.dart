@@ -4,7 +4,7 @@ import 'package:iqro/config/theme/app_texts.dart';
 import 'package:iqro/features/auth/presentation/pages/forgot_psw/reset_password.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import '../../../../../config/theme/app.colors.dart';
-import '../../widgets/elevated_button_widget.dart';
+import '../../widgets/register/elevated_button_widget.dart';
 
 class CheckEmail extends StatefulWidget {
   const CheckEmail({super.key});

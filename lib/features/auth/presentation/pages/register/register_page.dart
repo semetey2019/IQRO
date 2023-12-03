@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:iqro/config/theme/app.colors.dart';
 import 'package:iqro/config/theme/app_texts.dart';
-import 'package:iqro/features/auth/presentation/pages/compass_page/compass_page.dart';
+import 'package:iqro/features/auth/presentation/pages/compass/compass_page.dart';
 import 'package:iqro/features/auth/presentation/pages/sign_in/sign_in_page.dart';
-import 'package:iqro/features/auth/presentation/widgets/choose_register.dart';
-import 'package:iqro/features/auth/presentation/widgets/elevated_button_widget.dart';
-import 'package:iqro/features/auth/presentation/widgets/passtext_field.dart';
-import 'package:iqro/features/auth/presentation/widgets/textformfield_widget.dart';
+import 'package:iqro/features/auth/presentation/widgets/register/choose_register.dart';
+import 'package:iqro/features/auth/presentation/widgets/register/elevated_button_widget.dart';
+import 'package:iqro/features/auth/presentation/widgets/register/passtext_field.dart';
+import 'package:iqro/features/auth/presentation/widgets/register/textformfield_widget.dart';
 import '../../../../../config/helpers/validators.dart';
 import '../intro/wellcome.dart';
 

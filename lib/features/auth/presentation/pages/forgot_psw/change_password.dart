@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iqro/config/theme/app_texts.dart';
 import 'package:iqro/features/auth/presentation/pages/forgot_psw/successfully_page.dart';
 import '../../../../../config/theme/app.colors.dart';
-import '../../widgets/elevated_button_widget.dart';
+import '../../widgets/register/elevated_button_widget.dart';
 
 class ChangePassword extends StatefulWidget {
   const ChangePassword({super.key});

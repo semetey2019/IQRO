@@ -5,7 +5,7 @@ import 'package:iqro/features/auth/presentation/pages/forgot_psw/change_password
 
 import 'package:pin_code_fields/pin_code_fields.dart';
 import '../../../../../config/theme/app.colors.dart';
-import '../../widgets/elevated_button_widget.dart';
+import '../../widgets/register/elevated_button_widget.dart';
 
 class EnterCode extends StatefulWidget {
   const EnterCode({super.key});

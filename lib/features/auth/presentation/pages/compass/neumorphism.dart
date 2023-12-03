@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iqro/config/theme/app.colors.dart';
 
 class Neumorphism extends StatelessWidget {
   const Neumorphism({
@@ -25,40 +26,40 @@ class Neumorphism extends StatelessWidget {
         margin: margin,
         padding: padding,
         decoration: BoxDecoration(
-          color: Color(0xff236681),
+          color: AppColors.backgroundColor,
           shape: BoxShape.circle,
           boxShadow: isReverse
               ? [
                   BoxShadow(
-                    color: Color(0xff236681),
+                    color: AppColors.backgroundColor,
                     blurRadius: blur,
                     offset: Offset(-distance, -distance),
                   ),
                   BoxShadow(
-                    color: Color(0xff47515c),
+                    color: AppColors.circle,
                     blurRadius: blur,
                     offset: Offset(distance, distance),
                   ),
                 ]
               : [
                   BoxShadow(
-                    color: Color.fromARGB(255, 42, 60, 67),
+                    color: AppColors.circle1,
                     blurRadius: blur,
                     offset: Offset(-distance, -distance),
                   ),
                   BoxShadow(
-                    color: Color.fromARGB(255, 35, 51, 59),
+                    color: AppColors.circle2,
                     blurRadius: blur,
                     offset: Offset(distance, distance),
                   ),
                 ],
         ),
-        child: innerShadow ? ContainerGradient(child: child) : child);
+        child: innerShadow ? ContainerGradient1(child: child) : child);
   }
 }
 
-class ContainerGradient extends StatelessWidget {
-  const ContainerGradient({
+class ContainerGradient1 extends StatelessWidget {
+  const ContainerGradient1({
     super.key,
     required this.child,
     this.margin,
@@ -75,7 +76,7 @@ class ContainerGradient extends StatelessWidget {
       padding: padding,
       decoration: const BoxDecoration(
         shape: BoxShape.circle,
-        color: Colors.black38,
+        color: AppColors.black,
       ),
       child: child,
     );

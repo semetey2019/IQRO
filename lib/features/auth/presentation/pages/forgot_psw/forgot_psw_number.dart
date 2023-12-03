@@ -3,8 +3,8 @@ import 'package:iqro/features/auth/presentation/pages/forgot_psw/enter_code.dart
 import '../../../../../config/helpers/validators.dart';
 import '../../../../../config/theme/app.colors.dart';
 import '../../../../../config/theme/app_texts.dart';
-import '../../widgets/elevated_button_widget.dart';
-import '../../widgets/textformfield_widget.dart';
+import '../../widgets/register/elevated_button_widget.dart';
+import '../../widgets/register/textformfield_widget.dart';
 
 class ForgotPswNumber extends StatefulWidget {
   const ForgotPswNumber({super.key});

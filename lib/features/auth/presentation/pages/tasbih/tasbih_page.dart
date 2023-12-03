@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:iqro/features/auth/presentation/pages/compass_page/neumorphism.dart';
-import 'package:iqro/features/auth/presentation/pages/neumorphism_tasbix.dart';
-import 'package:iqro/features/auth/presentation/widgets/tasbix_view.dart';
+import 'package:iqro/config/theme/app.colors.dart';
+import 'package:iqro/features/auth/presentation/pages/compass/neumorphism.dart';
+import 'package:iqro/features/auth/presentation/pages/tasbih/neumorphism_tasbih.dart';
+import 'package:iqro/features/auth/presentation/widgets/tasbih/tasbih_view.dart';
 
 class TasbixScreen extends StatefulWidget {
   const TasbixScreen({super.key});
@@ -28,54 +29,60 @@ class _TasbixScreenState extends State<TasbixScreen> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    var theme = Theme.of(context);
     return Scaffold(
-        backgroundColor: const Color(0xff236681),
-        appBar: AppBar(
-          backgroundColor: const Color(0xff236681),
-          title: const Text("Тасбих",
-              style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.white)),
-          centerTitle: true,
-        ),
-        body: Stack(
-          alignment: Alignment.center,
-          children: [
-            NeumorphismTasbix(
-              margin: EdgeInsets.all(size.width * 0.09),
-              padding: const EdgeInsets.all(10),
-              child: CustomPaint(
-                size: size,
-                painter: TasbixViewPainter(color: Colors.white),
-              ),
+      backgroundColor: AppColors.backgroundColor,
+      appBar: AppBar(
+        backgroundColor: AppColors.backgroundColor,
+        title: Text("Тасбих",
+            style:
+                theme.textTheme.titleLarge?.copyWith(color: AppColors.white)),
+        centerTitle: true,
+      ),
+      body: Stack(
+        alignment: Alignment.center,
+        children: [
+          NeumorphismTasbix(
+            margin: EdgeInsets.all(size.width * 0.09),
+            padding: const EdgeInsets.all(10),
+            child: CustomPaint(
+              size: size,
+              painter: TasbixViewPainter(color: AppColors.white),
             ),
-            // ignore: prefer_const_constructors
-            CenterCircle(
-              direction: '$_counter',
+          ),
+          // ignore: prefer_const_constructors
+          CenterCircle(
+            direction: '${_counter}',
+          ),
+          InkWell(
+            onTap: () {
+              _incrementCounter();
+            },
+            child: Image.asset(
+              "assets/compas/taspix.png",
+              color: Colors.white30,
             ),
-            InkWell(
-              onTap: () {
-                _incrementCounter;
-              },
-              child: Image.asset(
-                "assets/compas/taspix.png",
-                color: Colors.white30,
-              ),
-            )
-          ],
-        ));
+          )
+        ],
+      ),
+    );
   }
 }
 
-class CenterCircle extends StatelessWidget {
+class CenterCircle extends StatefulWidget {
   const CenterCircle({Key? key, required this.direction}) : super(key: key);
 
   final String direction;
 
   @override
+  State<CenterCircle> createState() => _CenterCircleState();
+}
+
+class _CenterCircleState extends State<CenterCircle> {
+  @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    var theme = Theme.of(context);
     return Neumorphism(
       margin: EdgeInsets.all(size.width * 0.27),
       distance: 2.5,
@@ -84,7 +91,7 @@ class CenterCircle extends StatelessWidget {
         margin: EdgeInsets.all(size.width * 0.04),
         distance: 2,
         blur: 2,
-        child: ContainerGradient(
+        child: ContainerGradient2(
           padding: EdgeInsets.all(size.width * 0.01),
           child: Container(
             alignment: Alignment.center,
@@ -95,13 +102,9 @@ class CenterCircle extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  "${direction.toString().padLeft(5, '0')}",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: size.width * 0.07,
-                      fontWeight: FontWeight.bold),
-                ),
+                Text("${widget.direction.toString().padLeft(5, '0')}",
+                    style: theme.textTheme.titleLarge
+                        ?.copyWith(color: AppColors.white)),
               ],
             ),
           ),
@@ -111,8 +114,8 @@ class CenterCircle extends StatelessWidget {
   }
 }
 
-class ContainerGradient extends StatelessWidget {
-  const ContainerGradient({
+class ContainerGradient2 extends StatelessWidget {
+  const ContainerGradient2({
     super.key,
     required this.child,
     this.margin,

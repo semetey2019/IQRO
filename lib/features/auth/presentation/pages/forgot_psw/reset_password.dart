@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:iqro/features/auth/presentation/pages/forgot_psw/change_password.dart';
 import 'package:iqro/features/auth/presentation/pages/forgot_psw/forgot_psw.dart';
-import 'package:iqro/features/auth/presentation/widgets/passtext_field.dart';
+import 'package:iqro/features/auth/presentation/widgets/register/passtext_field.dart';
 import '../../../../../config/helpers/validators.dart';
 import '../../../../../config/theme/app.colors.dart';
 import '../../../../../config/theme/app_texts.dart';
-import '../../widgets/elevated_button_widget.dart';
+import '../../widgets/register/elevated_button_widget.dart';
 
 class ResetPassword extends StatefulWidget {
   const ResetPassword({super.key});

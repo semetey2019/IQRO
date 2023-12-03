@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:iqro/config/theme/app.colors.dart';
 
 class NeumorphismTasbix extends StatelessWidget {
   const NeumorphismTasbix({
     super.key,
     required this.child,
-    this.distance = 25,
-    this.blur = 20,
+    this.distance = 8,
+    this.blur = 10,
     this.margin,
     this.padding,
     this.isReverse = false,
@@ -25,29 +26,29 @@ class NeumorphismTasbix extends StatelessWidget {
         margin: margin,
         padding: padding,
         decoration: BoxDecoration(
-          color: Color(0xff236681),
+          color: AppColors.backgroundColor,
           shape: BoxShape.circle,
           boxShadow: isReverse
               ? [
                   BoxShadow(
-                    color: Color(0xff236681),
+                    color: AppColors.backgroundColor,
                     blurRadius: blur,
                     offset: Offset(-distance, -distance),
                   ),
                   BoxShadow(
-                    color: Color(0xff47515c),
+                    color: AppColors.circle,
                     blurRadius: blur,
                     offset: Offset(distance, distance),
                   ),
                 ]
               : [
                   BoxShadow(
-                    color: Color.fromARGB(255, 42, 60, 67),
+                    color: AppColors.circle1,
                     blurRadius: blur,
                     offset: Offset(-distance, -distance),
                   ),
                   BoxShadow(
-                    color: Color.fromARGB(255, 35, 51, 59),
+                    color: AppColors.circle2,
                     blurRadius: blur,
                     offset: Offset(distance, distance),
                   ),
@@ -75,7 +76,7 @@ class ContainerGradient extends StatelessWidget {
       padding: padding,
       decoration: const BoxDecoration(
         shape: BoxShape.circle,
-        color: Color.fromARGB(96, 158, 68, 68),
+        color: AppColors.brown,
       ),
       child: child,
     );

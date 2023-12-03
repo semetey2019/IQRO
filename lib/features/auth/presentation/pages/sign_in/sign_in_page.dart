@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:iqro/config/theme/app.colors.dart';
 import 'package:iqro/config/theme/app_texts.dart';
 import 'package:iqro/features/auth/presentation/pages/forgot_psw/forgot_psw_email.dart';
-import 'package:iqro/features/auth/presentation/widgets/choose_register.dart';
-import 'package:iqro/features/auth/presentation/widgets/elevated_button_widget.dart';
-import 'package:iqro/features/auth/presentation/widgets/textformfield_widget.dart';
+import 'package:iqro/features/auth/presentation/widgets/register/choose_register.dart';
+import 'package:iqro/features/auth/presentation/widgets/register/elevated_button_widget.dart';
+import 'package:iqro/features/auth/presentation/widgets/register/textformfield_widget.dart';
 import '../../../../../config/helpers/validators.dart';
-import '../../widgets/passtext_field.dart';
+import '../../widgets/register/passtext_field.dart';
 import '../intro/notification_page.dart';
 
 class SignInPage extends StatefulWidget {

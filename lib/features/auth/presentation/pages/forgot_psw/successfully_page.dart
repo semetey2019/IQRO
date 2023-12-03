@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iqro/config/theme/app_texts.dart';
 import '../../../../../config/theme/app.colors.dart';
-import '../../widgets/elevated_button_widget.dart';
+import '../../widgets/register/elevated_button_widget.dart';
 
 class SuccessfullyPage extends StatelessWidget {
   const SuccessfullyPage({super.key});

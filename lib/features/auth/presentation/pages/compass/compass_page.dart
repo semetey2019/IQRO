@@ -3,8 +3,9 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:iqro/features/auth/presentation/pages/compass_page/neumorphism.dart';
-import '../../widgets/compass_view.dart';
+import 'package:iqro/config/theme/app.colors.dart';
+import 'package:iqro/features/auth/presentation/pages/compass/neumorphism.dart';
+import '../../widgets/compass/compass_view.dart';
 import 'package:flutter_compass/flutter_compass.dart';
 
 class CompassScreen extends StatefulWidget {
@@ -26,16 +27,15 @@ class _CompassScreenState extends State<CompassScreen> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    var theme = Theme.of(context);
     return Scaffold(
-      backgroundColor: const Color(0xff236681),
+      backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
-        backgroundColor: const Color(0xff236681),
-        title: const Text("Компас",
-            style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.w600,
-                color: Colors.white)),
-        centerTitle: true,
+        backgroundColor: AppColors.backgroundColor,
+        title: Text(
+          "Компас",
+          style: theme.textTheme.titleLarge?.copyWith(color: AppColors.white),
+        ),
       ),
       body: StreamBuilder<CompassEvent>(
         stream: FlutterCompass.events,
@@ -78,29 +78,29 @@ class _CompassScreenState extends State<CompassScreen> {
                     Container(
                       width: 10,
                       height: 10,
-                      decoration: BoxDecoration(
-                        color: Colors.red,
+                      decoration: const BoxDecoration(
+                        color: AppColors.red,
                         boxShadow: [
                           BoxShadow(
-                              color: Colors.grey.shade500,
+                              color: AppColors.grey,
                               blurRadius: 4,
-                              offset: const Offset(8, 8)),
+                              offset: Offset(8, 8)),
                         ],
                       ),
                     ),
                     Container(
                       width: 5,
                       height: size.width * .22,
-                      decoration: BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: const BorderRadius.vertical(
+                      decoration: const BoxDecoration(
+                        color: AppColors.red,
+                        borderRadius: BorderRadius.vertical(
                           bottom: Radius.circular(10),
                         ),
                         boxShadow: [
                           BoxShadow(
-                              color: Colors.grey.shade500,
+                              color: AppColors.grey,
                               blurRadius: 4,
-                              offset: const Offset(8, 8)),
+                              offset: Offset(8, 8)),
                         ],
                       ),
                     ),
@@ -138,7 +138,7 @@ class CenterDisplayMeter extends StatelessWidget {
           margin: EdgeInsets.all(size.width * 0.02),
           distance: 4,
           blur: 4,
-          child: ContainerGradient(
+          child: ContainerGradient1(
             padding: EdgeInsets.all(size.width * 0.01),
             child: Container(
               alignment: Alignment.center,
@@ -152,14 +152,14 @@ class CenterDisplayMeter extends StatelessWidget {
                   Text(
                     "${direction.toInt().toString().padLeft(3, '0')}°",
                     style: TextStyle(
-                        color: Colors.white,
+                        color: AppColors.white,
                         fontSize: size.width * 0.07,
                         fontWeight: FontWeight.bold),
                   ),
                   Text(
                     getDirection(direction),
                     style: TextStyle(
-                        color: Colors.white,
+                        color: AppColors.white,
                         fontSize: size.width * 0.07,
                         fontWeight: FontWeight.bold),
                   ),
