@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:iqro/config/config.dart';
-import 'package:iqro/features/auth/presentation/pages/intro/intro_page.dart';
-import 'package:iqro/features/auth/presentation/pages/compass/compass_page.dart';
-import 'package:iqro/features/auth/presentation/pages/paint/write_page.dart';
+
+import 'package:iqro/features/auth/presentation/pages/rating/rating_page.dart';
 import 'package:iqro/service_locator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import 'features/auth/presentation/pages/tasbih/tasbih_page.dart';
 
 bool show = true;
 void main() async {
@@ -25,7 +22,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: themeData,
       debugShowCheckedModeBanner: false,
-      home: DrawingBoard(),
+      home: RatingPage(),
     );
   }
 }

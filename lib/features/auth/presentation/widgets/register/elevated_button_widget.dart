@@ -2,12 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:iqro/config/theme/app.colors.dart';
 
 class ElevatedButtonWidget extends StatelessWidget {
-  const ElevatedButtonWidget(
-      {super.key, required this.text, this.onPressed, this.style});
+  const ElevatedButtonWidget({
+    super.key,
+    required this.text,
+    this.onPressed,
+    this.style,
+  });
 
   final Function()? onPressed;
   final TextStyle? style;
   final String text;
+
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
