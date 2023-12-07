@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../config/theme/app.colors.dart';
+import '../../widgets/rating/button_widget.dart';
 import 'certificate_page.dart';
-import 'rating_page.dart';
 
 class TrophyPage extends StatefulWidget {
   const TrophyPage({super.key});
@@ -105,20 +105,23 @@ class _TrophyPageState extends State<TrophyPage> {
               children: [
                 ButtonWidget(
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => CertificatePage()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const CertificatePage()));
                   },
                   backgroundColor: AppColors.backgroundColor,
-                  color: BorderSide(width: 2, color: AppColors.backgroundColor),
-                  minimumSize: Size(166, 56),
+                  color: const BorderSide(
+                      width: 2, color: AppColors.backgroundColor),
+                  minimumSize: const Size(166, 56),
                   text: 'Кайталоо',
                 ),
                 ButtonWidget(
                   onPressed: () {},
-                  color: BorderSide(width: 2, color: AppColors.white),
-                  minimumSize: Size(166, 56),
+                  color: const BorderSide(width: 2, color: AppColors.white),
+                  minimumSize: const Size(166, 56),
                   text: 'Кийинки',
-                )
+                ),
               ],
             ),
           ],
