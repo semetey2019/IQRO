@@ -95,7 +95,7 @@ class _SignInPageState extends State<SignInPage> {
                     },
                     hinText: 'Пароль',
                   ),
-                  const SizedBox(height: 19),
+                  const SizedBox(height: 20),
                   Row(
                     children: [
                       Checkbox(
