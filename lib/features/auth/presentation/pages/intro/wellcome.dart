@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../../config/theme/app.colors.dart';
 
 class WellcomePage extends StatefulWidget {
-  WellcomePage({super.key});
+  const WellcomePage({super.key});
 
   @override
   State<WellcomePage> createState() => _WellcomePageState();
@@ -65,16 +65,16 @@ class _WellcomePageState extends State<WellcomePage> {
                       _currentIndex = (_currentIndex + 1) % images.length;
                     });
                   },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color.fromARGB(235, 227, 235, 249),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                  ),
                   child: Text(
                     "Включить о местоположения",
                     style: theme.textTheme.titleSmall
                         ?.copyWith(color: Colors.blue),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromARGB(235, 227, 235, 249),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
                   ),
                 ),
                 const SizedBox(height: 40),

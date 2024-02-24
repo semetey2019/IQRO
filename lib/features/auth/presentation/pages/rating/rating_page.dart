@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:iqro/features/auth/presentation/pages/rating/trophy_page.dart';
 import '../../../../../config/theme/app.colors.dart';
 import '../../widgets/rating/button_widget.dart';

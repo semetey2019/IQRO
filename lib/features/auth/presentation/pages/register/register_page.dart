@@ -167,7 +167,6 @@ class _RegisterPageState extends State<RegisterPage> {
                   ElevatedButtonWidget(
                     onPressed: () {
                       // if (_formKey.currentState!.validate()) {
-                      print("test");
                       Navigator.push(
                           context,
                           MaterialPageRoute(
