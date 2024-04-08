@@ -258,20 +258,20 @@ class _RegisterPageState extends State<RegisterPage> {
     );
   }
 
-  // _launchFaceBook() async {
-  //   const url = 'https://www.facebook.com';
-  //   // ignore: deprecated_member_use
-  //   if (await canLaunch(url)) {
-  //     // ignore: deprecated_member_use
-  //     await launch(url);
-  //   } else {
-  //     throw 'Could not launch $url';
-  //   }
-  //   // try {
-  //   //   // Code to open the URL
-  //   // } catch (e) {
-  //   //   print('Error launching URL: $e');
-  //   //   // Handle the error as needed
-  //   // }
-  // }
+// _launchFaceBook() async {
+//   const url = 'https://www.facebook.com';
+//   // ignore: deprecated_member_use
+//   if (await canLaunch(url)) {
+//     // ignore: deprecated_member_use
+//     await launch(url);
+//   } else {
+//     throw 'Could not launch $url';
+//   }
+//   // try {
+//   //   // Code to open the URL
+//   // } catch (e) {
+//   //   print('Error launching URL: $e');
+//   //   // Handle the error as needed
+//   // }
+// }
 }

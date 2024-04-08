@@ -29,10 +29,10 @@ class _IntroPageState extends State<IntroPage> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 5), () {
-      Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(builder: (_) => const RegisterPage()),
-          (route) => false);
+      // Navigator.pushAndRemoveUntil(
+      //     context,
+      //     MaterialPageRoute(builder: (_) => const RegisterPage()),
+      //     (route) => false);
     });
   }
 
